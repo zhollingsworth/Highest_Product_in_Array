@@ -46,6 +46,12 @@ public class Highest_Product
 				h1 = (arrayOfInts[i] > h1) ? arrayOfInts[i]:h1;
 			
 		}//end of for loop
+		return h1*h2*h3;
 	}//end of method highestProduct
 	
+	public static void main (String[] args)
+	{
+		int[] tester = new int[]{3, 2, 1, 4, 1, 2, 5, 2, 3, 7};
+		System.out.println("Highest product is: "+highestProduct(tester));
+	}
 }
