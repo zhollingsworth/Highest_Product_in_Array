@@ -35,55 +35,6 @@ public class Highest_Product
 		else
 			return arrayOfInts[arrayOfInts.length-3]*arrayOfInts[arrayOfInts.length-2]*arrayOfInts[arrayOfInts.length-1]; 
 	}
-	/*
-	public static int highestProduct(int[] arrayOfInts)
-	{
-		int h1 = arrayOfInts[0]; 
-		int h2 = arrayOfInts[1]; 
-		int h3 = arrayOfInts[2];
-		int[] negatives = new int[arrayOfInts.length];
-		int counter = 0;
-		int temp = 0;
-		int temp2 = 0;
-		
-		for(int i = 3; i < arrayOfInts.length; i++)
-		{
-			if(arrayOfInts[i] < 0)
-			{
-				negatives[counter] = arrayOfInts[i];
-				counter++;
-			}
-			else if(arrayOfInts[i] > h3)
-			{
-				temp = h3;
-				h3 = arrayOfInts[i];
-				if(temp > h2)
-				{
-					temp2 = h2;
-					h2 = temp;
-					h1 = (temp2 > h1) ? temp2:h1;
-				}
-				else
-					h1 = (temp > h1) ? temp:h1;
-			
-			}
-			else if(arrayOfInts[i] > h2)
-			{
-				temp = h2;
-				h2 = arrayOfInts[i];
-				h1 = (temp > h1) ? temp:h1;
-				h1 = (arrayOfInts[i] > h1) ? arrayOfInts[i]:h1;
-			}
-			else
-				h1 = (arrayOfInts[i] > h1) ? arrayOfInts[i]:h1;
-			
-		}//end of for loop
-		if(negatives[1] != 0)
-		{
-			Handle_Negatives.findValues(negatives);
-		}
-		return h1*h2*h3;
-	}//end of method highestProduct*/
 	
 	public static void main (String[] args)
 	{
