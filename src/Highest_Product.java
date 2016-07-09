@@ -15,6 +15,8 @@ public class Highest_Product
 	{
 		int key;
 		int j;
+		int mult1 = 1;
+		int mult2 = 1;
 		//Using insertion sort to sort the array
 		for(int i = 1; i < arrayOfInts.length; i++)
 		{
@@ -31,14 +33,23 @@ public class Highest_Product
 		}
 		//Returning value based on presence of at least 2 negatives, or 1 or no negatives
 		if(arrayOfInts[1] < 0)
-			return arrayOfInts[0]*arrayOfInts[1]*arrayOfInts[arrayOfInts.length-1];
+		{
+			if(arrayOfInts[0]*-1 > arrayOfInts[arrayOfInts.length-1] || arrayOfInts[0]*-1 > arrayOfInts[arrayOfInts.length-2] || arrayOfInts[0]*-1 > arrayOfInts[arrayOfInts.length-3])
+				mult1 = arrayOfInts[0];
+			if(arrayOfInts[1]*-1 > arrayOfInts[arrayOfInts.length-1] || arrayOfInts[1]*-1 > arrayOfInts[arrayOfInts.length-2] || arrayOfInts[1]*-1 > arrayOfInts[arrayOfInts.length-3])
+				mult2 = arrayOfInts[1];
+			if(mult1 > 0 || mult2 > 0)
+				return arrayOfInts[arrayOfInts.length-3]*arrayOfInts[arrayOfInts.length-2]*arrayOfInts[arrayOfInts.length-1];
+			else
+				return mult1*mult2*arrayOfInts[arrayOfInts.length-1];
+		}
 		else
 			return arrayOfInts[arrayOfInts.length-3]*arrayOfInts[arrayOfInts.length-2]*arrayOfInts[arrayOfInts.length-1]; 
 	}
 	
 	public static void main (String[] args)
 	{
-		int[] tester = new int[]{3, 2, -10, 1, 4, 1, 2, 5, 2, 3, 7, -10};
+		int[] tester = new int[]{3, 2, -1, 1, 4, 1, 2, 5, 2, 3, 7, -10};
 		System.out.println("Highest product is: "+highestProduct(tester));
 	}
 }
